@@ -1,4 +1,3 @@
-import React from "react";
 import Home from "./pages/home";
 import GameBoard from "./componnents/GameBoard";
 import { GameProvider, useGame } from "./context/GameContext";

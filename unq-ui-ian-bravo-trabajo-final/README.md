@@ -1,25 +1,34 @@
-# unq-ui-ian-bravo-trabajo-final
+# Trabajo Final Integrador - Interfaces de Usuario (1°C 2025)
 
-## Juego Wordle - Trabajo Final Integrador (TFI) Interfaces de Usuario 1°C 2025
+**Alumno:** Ian Bravo  
+**Repositorio:** [https://github.com/ianbravo/unq-ui-ian-bravo-trabajo-final](https://github.com/ianbravo/unq-ui-ian-bravo-trabajo-final)
 
----------------------------------------------------------------------------------------------------------------
+## Enunciado
+Este trabajo consiste en el desarrollo de un juego estilo Wordle (llamado Wordly), utilizando React, siguiendo las reglas, requisitos funcionales y no funcionales establecidos por la cátedra.
 
-### Descripción
+## Reglas del Juego
+- Debés adivinar una palabra en español de X letras.
+- Tenés **6 intentos** para acertarla.
+- Cada letra se evalúa y se marca con colores:
+  - 🟩  Letra en la posición correcta (`correct`).
+  - 🟨  Letra en la palabra pero en otra posición (`elsewhere`).
+  - ⬜  Letra no está en la palabra (`absent`).
 
-Este proyecto es una implementación del clásico juego Wordle en React, consumiendo una API externa provista por la cátedra para validar palabras y manejar sesiones de juego.
+### Ejemplo
+Palabra objetivo: **JUGAR**
 
----------------------------------------------------------------------------------------------------------------
+| Intento | Resultado                  |
+|---------|----------------------------|
+| FLETE   | ⬜ ⬜ ⬜ ⬜ ⬜----------|
+| RATON   | 🟨 ⬜ ⬜ ⬜ ⬜----------|
+| LUGAR   | ⬜ 🟩 🟩 🟩 🟩----------|
+| JUGAR   | 🟩 🟩 🟩 🟩 🟩 (ganaste)|       
 
-### Tecnologías utilizadas
+## Tecnologías utilizadas
+- React (CRA)
+- Hooks personalizados y React Context para gestión del estado
+- CSS puro con estilos modernos y responsivos
 
-- React (Create React App)
-- Fetch API para comunicación con backend externo
-- JavaScript ES6+
-- CSS para estilos básicos
 
----------------------------------------------------------------------------------------------------------------
-
-### Instalación y ejecución
-
-1. Clonar el repositorio:
+### Clonar el repositorio
 git clone https://github.com/ianbravo/unq-ui-ian-bravo-trabajo-final.git

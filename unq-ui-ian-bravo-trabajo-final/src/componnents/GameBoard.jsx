@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useGame } from "../context/GameContext";
+import "../App.css";
 
 const MAX_ATTEMPTS = 6;
 
@@ -52,22 +53,9 @@ const GameBoard = () => {
         {guesses.map(({ word, result }, idx) => (
           <div key={idx} style={{ display: "flex", gap: "5px", justifyContent: "center" }}>
             {result.map(({ letter, solution }, i) => (
-              <div
-                key={i}
-                style={{
-                  width: "30px",
-                  height: "30px",
-                  lineHeight: "30px",
-                  textAlign: "center",
-                  backgroundColor: getColor(solution),
-                  color: "white",
-                  fontWeight: "bold",
-                  borderRadius: "4px",
-                  userSelect: "none",
-                }}
-              >
+            <div key={i} className={`guess-letter ${solution}`}>
                 {letter.toUpperCase()}
-              </div>
+            </div>
             ))}
           </div>
         ))}
