@@ -12,7 +12,7 @@ function MainApp() {
   if (gameOver) {
     return (
       <div style={{ textAlign: "center" }}>
-        <h1>{won ? "¡Ganaste! 🎉" : "Juego terminado, perdiste 😞"}</h1>
+        <h1>{won ? "¡Ganaste! :)" : "Juego terminado, perdiste :("}</h1>
         <button onClick={resetGame}>Jugar de nuevo</button>
       </div>
     );
