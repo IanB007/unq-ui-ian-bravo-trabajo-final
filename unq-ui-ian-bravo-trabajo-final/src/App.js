@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Home from "./pages/home";
+import GameBoard from "./componnents/GameBoard";
+import { GameProvider, useGame } from "./context/GameContext";
+
+function MainApp() {
+  const { session, gameOver, won, resetGame } = useGame();
+
+  if (!session) {
+    return <Home />;
+  }
+
+  if (gameOver) {
+    return (
+      <div style={{ textAlign: "center" }}>
+        <h1>{won ? "¡Ganaste! 🎉" : "Juego terminado, perdiste 😞"}</h1>
+        <button onClick={resetGame}>Jugar de nuevo</button>
+      </div>
+    );
+  }
+
+  return <GameBoard />;
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GameProvider>
+      <MainApp />
+    </GameProvider>
   );
 }
 
